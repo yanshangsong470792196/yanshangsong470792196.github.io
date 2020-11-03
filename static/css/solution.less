@@ -1,0 +1,91 @@
+.banner-static {
+  height: 520px;
+  background-image: url(../imgs/solution/banner1_.png);
+}
+.content {
+  padding: 100px 0;
+  .part + .part {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .sub {
+    margin-bottom: 70px;
+  }
+  .part {
+    .text {
+      line-height: 38px;
+    }
+  }
+
+  .solution-e2e,
+  .solution-iot,
+  .solution-icCard,
+  .solution-gas {
+    position: relative;
+    padding: 60px 112px;
+    border: 3px solid transparent;
+    .detail {
+      margin-top: 35px;
+    }
+    &.ml {
+      margin-left: 175px;
+    }
+    &.mr {
+      margin-right: 175px;
+    }
+    .box2left {
+      margin-left: -356px;
+    }
+    .box2right {
+      margin-right: -356px;
+    }
+    .ml {
+      margin-left: 134px;
+    }
+    .mr {
+      margin-right: 134px;
+    }
+    &:hover {
+      border-color: #045db8;
+      cursor: pointer;
+    }
+  }
+  .solution-e2e {
+    .block {
+      width: 42px;
+      height: 42px;
+      background: #4c83c8;
+      position: absolute;
+      right: -187px;
+      top: -3px;
+    }
+  }
+
+  .img-shell {
+    white-space: nowrap;
+    img {
+      width: 533px;
+      height: 366px;
+    }
+    .icon-text {
+      display: inline-block;
+      vertical-align: top;
+      font-family: 'Microsoft YaHei';
+      font-weight: 400;
+      color: #cccccc;
+      line-height: 20px;
+      &.left {
+        -webkit-transform: rotate(-90deg) translateX(-50%);
+        -ms-transform: rotate(-90deg) translateX(-50%);
+        transform: rotate(-90deg) translateX(-50%);
+        margin-right: -20px;
+      }
+      &.right {
+        -webkit-transform: rotate(90deg) translateX(50%);
+        -ms-transform: rotate(90deg) translateX(50%);
+        transform: rotate(90deg) translateX(50%);
+        margin-left: -20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.banner-static {
+  height: 380px;
+  background-image: url(../imgs/product/banner_.png);
+}
+.content {
+  color: #343434;
+  padding: 100px 0;
+  line-height: 24px;
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .sub-title {
+    font-size: 16px;
+    margin: 24px 0;
+  }
+  .part {
+    p {
+      font-size: 14px;
+      &:not(.li) {
+        text-indent: 2em;
+        margin-bottom: 0;
+      }
+      &.li {
+        &:not(:nth-of-type(1)) {
+          margin-top: 40px;
+        }
+      }
+    }
+    &.part {
+      margin-top: 40px;
+    }
+    .text--img {
+      text-align: justify;
+      display: inline-block;
+      width: -webkit-calc(100% - 300px);
+      width: calc(100% - 300px);
+    }
+  }
+  #civil,
+  #commercial,
+  #collector,
+  #system,
+  #cloudServices,
+  #bigData {
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+  img {
+    max-width: 80%;
+  }
+}

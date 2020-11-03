@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta target="_blank" name="keywords" content="成都中科慧源有限公司,中科慧源,成都中科慧源,中科慧源公司" />
+    <meta target="_blank" name="description" content="成都中科慧源有限公司是以燃气公用事业数据服务和能源大数据+AI智能终端设备生产制造为一体的国家级高新技术企业、国家级软件企业。" />
+    <title>中科慧源官网</title>
+    <link rel="stylesheet" href="./static/lib/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./static/css/common.css" />
+    <link rel="stylesheet" href="./static/css/news.css" />
+</head>
+
+<body nav="news">
+    <script src="./static/js/header.js"></script>
+    <!-- banner -->
+    <section class="banner-static"></section>
+    <!-- body -->
+    <section class="content container">
+        <div class="box"> </div>
+    </section>
+    <script src="./static/js/footer.js"></script>
+    <script src="./static/lib/jquery/jquery1.11.1.min.js"></script>
+    <script src="./static/lib/jquery/jquery.lazyload.min.js"></script>
+    <script src="./static/js/util.js"></script>
+    <script src="./static/js/common.js"></script>
+    <script>
+        preloadImage([{
+            imgUrl: './static/imgs/news/banner.png',
+            callback: function() {
+                $('.banner-static').css('background-image', 'url("./static/imgs/news/banner.png")');
+            }
+        }]);
+
+        var news = [{
+            id: 11,
+            imgUrl: './static/imgs/news/news1.2.jpg',
+            date: '2020.05.13',
+            title: '崇州市天然气有限公司莅临中科慧源培训交流'
+        }, {
+            id: 10,
+            imgUrl: './static/imgs/news/news2.1.jpg',
+            date: '2020.05.29',
+            title: '四川广安爱众股份有限公司及川商总会领导一行莅临中科慧源参观指导'
+        }, {
+            id: 9,
+            imgUrl: './static/imgs/news/news3.1.jpg',
+            date: '2020.06.03',
+            title: '前锋爱众智慧燃气系统业务实操培训'
+        }, {
+            id: 8,
+            imgUrl: './static/imgs/news/news4.1.jpg',
+            date: '2020.06.11',
+            title: '四川巨能（集团）公司董事长曾国勇先生一行莅临中科慧源考察交流'
+        }, {
+            id: 7,
+            imgUrl: './static/imgs/news/news5_.png',
+            date: '2020.07.02',
+            title: '刚刚，中科慧源喜提2020年成都市新经济“双百工程”重点工程企业'
+        }, {
+            id: 6,
+            imgUrl: './static/imgs/news/news_.png',
+            date: '2020.07.24',
+            title: '喜大普奔！中科慧源又双叒叕中标了！这次是……'
+        }, {
+            id: 5,
+            imgUrl: './static/imgs/news/news7.3.jpg',
+            date: '2020.08.18',
+            title: '中科慧源2020年中全体员工大会暨团建活动圆满举行！'
+        }, {
+            id: 4,
+            imgUrl: './static/imgs/news/news_.png',
+            date: '2020.08.18',
+            title: '中科慧源荣获四川省企业质量信用“AAA 示范企业”称号'
+        }, {
+            id: 3,
+            imgUrl: './static/imgs/news/news9.1.jpg',
+            date: '2020.09.09',
+            title: '和信能源集团正式启动能源数字化建设'
+        }, {
+            id: 2,
+            imgUrl: './static/imgs/news/news10.1.jpg',
+            date: '2020.09.10',
+            title: '市政府督查室、新经济委领导一行莅临中科慧源调研'
+        }, {
+            id: 1,
+            imgUrl: './static/imgs/news/news11_.png',
+            date: '2020.09.18',
+            title: '改变未来的预警'
+        }, {
+            id: 0,
+            imgUrl: './static/imgs/news/news12.2.png',
+            date: '2020.10.22',
+            title: '中国燃气战略发展委员会副主席黄赖培莅临中科慧源指导交流'
+        }];
+        news = news.reverse();
+        var page = 1,
+            pageSize = 6,
+            total = Math.ceil(news.length / pageSize);
+        // do
+        $('.content').append(getPager(news));
+        if (sessionStorage.getItem('newsPage')) {
+            page = sessionStorage.getItem('newsPage');
+            $('.z-pagination .page[data-page="' + page + '"]').click();
+        } else {
+            $('.content .box').prepend(getHtml(news.slice((page - 1) * pageSize, page * pageSize)));
+        }
+
+        function getPager(data) {
+            var html = '<div class="z-pagination"><li  class="page-item pre disable"';
+            html += 'onclick="turnPage(\'prev\')">＜</li>' + getPage(data) + '<li class="page-item next"';
+            html += 'onclick="turnPage(\'next\')">＞</li></div>';
+
+            function getPage(d) {
+                var html_ = '';
+                for (var i = 1; i <= total; i++) {
+                    html_ += '<li class="page-item page ';
+                    html_ += i == 1 ? 'active' : '';
+                    html_ += '" data-page="' + i + '"  onclick="toPage(' + i + ',event)">' + i + '</li>';
+                }
+                return html_;
+            }
+
+            return html;
+        }
+
+        function getHtml(data) {
+            var html = '';
+            data.forEach(function(item, i) {
+                html += '<div class="card ' + getClass(i) + '" onclick="toDetail(' + item.id + ')">';
+                html +=
+                    '<div class="img d-inline-block"><img class="lazyload" data-original="' +
+                    item.imgUrl +
+                    '" alt=""';
+                html += 'width="350px" height="262px" /></div><div class="box-text" style="padding: 20px">';
+                html += '<p class="date">' + item.date + '</p>';
+                html += '<p class="title">' + item.title + '</p></div></div>';
+            });
+            return html;
+        }
+
+        // handler
+        function toDetail(id) {
+            sessionStorage.setItem('newsPage', page);
+            window.location.href = './news_detail.html?id=' + id;
+        }
+
+        function toPage(p, event) {
+            p == 1 ? $('.z-pagination .pre').addClass('disable') : $('.z-pagination .pre').removeClass('disable');
+            p == total ?
+                $('.z-pagination .next').addClass('disable') :
+                $('.z-pagination .next').removeClass('disable');
+            page = p;
+            event.target ?
+                $(event.target).addClass('active').siblings().removeClass('active') :
+                event.addClass('active').siblings().removeClass('active');
+            $('.content .box').html(getHtml(news.slice((page - 1) * pageSize, page * pageSize)));
+        }
+
+        function turnPage(key) {
+            if (key == 'prev') {
+                toPage(page - 1, $('.z-pagination li.page.active').prev());
+                initLazyload($('.card .lazyload'));
+            } else if (key == 'next') {
+                toPage(page + 1, $('.z-pagination li.page.active').next());
+                initLazyload($('.card .lazyload'));
+            }
+        }
+
+        function getClass(i) {
+            return (i + 1) % 3 ? 'mr' : '';
+        }
+    </script>
+</body>
+
+</html>

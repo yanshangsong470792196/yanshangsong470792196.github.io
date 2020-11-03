@@ -1,0 +1,97 @@
+.banner-static {
+  height: 380px;
+  background-image: url(../imgs/news/banner_.png);
+}
+
+.content {
+  padding: 100px 0;
+  .box {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .card {
+    border: none;
+    transition: transform 200ms;
+    &:hover {
+      cursor: pointer;
+      // box-shadow: 0px 0px 9px 2px rgba(5, 30, 62, 0.1);
+      box-shadow: 0px 0px 29px 3px rgba(4, 29, 62, 0.1);
+      transform: scale(1.06);
+    }
+    &.mr {
+      margin-right: 72px;
+    }
+    .box-text {
+      padding: 20px;
+      border: 1px solid rgba(51, 51, 51, 0.2);
+      background: rgba(255, 255, 255, 0.2);
+      height: 146px;
+      .date {
+        font-size: 12px;
+        color: #999999;
+        line-height: 24px;
+      }
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333333;
+        line-height: 24px;
+      }
+    }
+    width: 350px;
+    margin-bottom: 68px;
+    img {
+      width: 100%;
+    }
+  }
+  .z-pagination {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: default;
+    li:not(:last-child) {
+      margin-right: 12px;
+    }
+    .page-item {
+      list-style: none;
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      border: 1px solid #999999;
+      text-align: center;
+      line-height: 24px;
+      font-size: 12px;
+      &.pre,
+      &.next {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &.disable {
+          pointer-events: none;
+          cursor: not-allowed;
+          background: #f4f4f5;
+          color: #bcbec2;
+          border-color: #f4f4f5;
+        }
+      }
+      &.active,
+      &:hover:not(.disable) {
+        background: #062449;
+        border: 1px solid #062449;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}

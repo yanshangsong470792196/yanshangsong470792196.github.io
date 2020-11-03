@@ -1,0 +1,43 @@
+.banner-static {
+  height: 380px;
+  background-image: url(../imgs/solution/banner_.png);
+}
+.content {
+  color: #343434;
+  padding: 100px 0;
+  line-height: 24px;
+}
+.content #e2e,
+.content #icCard,
+.content #gas,
+.content #iot {
+  display: none;
+}
+.content #e2e.show,
+.content #icCard.show,
+.content #gas.show,
+.content #iot.show {
+  display: block;
+}
+.content .title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 80px;
+}
+.content .sub-title {
+  font-size: 16px;
+  margin: 24px 0;
+}
+.content p {
+  font-size: 14px;
+  text-indent: 2em;
+  margin-bottom: 4px;
+}
+.content p.li {
+  text-indent: 0;
+  margin: 10px 0;
+}
+.content img {
+  max-width: 100%;
+}
